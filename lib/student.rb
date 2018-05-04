@@ -55,10 +55,10 @@ class Student
     #This method creates a student with two attributes, name and grade.
 
   def self.new_from_db(row)
-    self.new(id, name, grade)
     id = row[0]
     name = row[1]
     grade = row[2]
+    self.new(id, name, grade)
   end
     # This class method takes an argument of an array. When we call this method we will pass it the array
     # that is the row returned from the database by the execution of a SQL query.
