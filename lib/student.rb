@@ -43,7 +43,6 @@ class Student
       SQL
       DB[:conn].execute(sql, self.name, self.grade)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
-    end
   end
   # This instance method inserts a new row into the database using the attributes of the given object.
   # This method also assigns the id attribute of the object once the row has been inserted into the database.
