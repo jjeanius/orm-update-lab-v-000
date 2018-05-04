@@ -42,7 +42,7 @@ class Student
         VALUES (?, ?)
       SQL
       DB[:conn].execute(sql, self.id, self.name)
-      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0][0]
+      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
     end
   end
   # This instance method inserts a new row into the database using the attributes of the given object.
