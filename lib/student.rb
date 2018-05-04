@@ -75,7 +75,7 @@ class Student
   #This class method takes in an argument of a name. It queries the database table for a record that has a name of the name passed in as an argument. Then it uses the #new_from_db method to instantiate a Student object with the database row that the SQL query returns.
 
   def update
-    sql = "UPDATE students SET name = ?, album = ? WHERE ide = ?"
+    sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?"
     DB [:conn].execute(sql, self.name, self.grade, self.id)
   end
     # This method updates the database row mapped to the given Student instance.
