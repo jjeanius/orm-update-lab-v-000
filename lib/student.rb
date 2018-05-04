@@ -54,7 +54,7 @@ class Student
   end
     #This method creates a student with two attributes, name and grade.
 
-  def self.new_from_db(name)
+  def self.new_from_db(row)
     self.new(id, name, grade)
     id = row[0]
     name = row[1]
