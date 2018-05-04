@@ -34,6 +34,10 @@ class Student
     # This class method should be responsible for dropping the students table.
 
   def save
+    if self.id
+      self.update
+    else
+    
       sql = <<-SQL
         INSERT INTO students (name, grade)
         VALUES (?,?)
