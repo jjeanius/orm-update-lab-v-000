@@ -65,7 +65,7 @@ class Student
     # We can anticipate that this array will contain three elements in this order: the id, name and grade of a student.
     #The .new_from_db method uses these three array elements to create a new Student object with these attributes.
 
-  def self.find_by_name
+  def self.find_by_name(name)
     sql = "SELECT * FROM students WHERE name = ? LIMIT 1"
     result = DB[:conn].execute(sql, name) [0]
     Student.new(result[0], result[1], result[2])
