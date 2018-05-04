@@ -68,7 +68,7 @@ class Student
   def self.find_by_name
     sql = "SELECT * FROM students WHERE name = ? LIMIT 1"
     result = DB[:conn].execute(sql, name) [0]
-    tudent.new(result[0], result[1], result[2])
+    Student.new(result[0], result[1], result[2])
   end
   #This class method takes in an argument of a name. It queries the database table for a record that has a name of the name passed in as an argument. Then it uses the #new_from_db method to instantiate a Student object with the database row that the SQL query returns.
 
