@@ -38,10 +38,10 @@ class Student
       self.update
     else
       sql = <<-SQL
-        INSERT INTO students (id, name)
+        INSERT INTO students (name, grade)
         VALUES (?, ?)
       SQL
-      DB[:conn].execute(sql, self.id, self.name)
+      DB[:conn].execute(sql, self.name, self.grade)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
     end
   end
